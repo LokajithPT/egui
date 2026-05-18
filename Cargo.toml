@@ -1,0 +1,13 @@
+[package]
+name = "gui"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = { version = "0.27", default-features = false, features = ["glow", "accesskit", "default_fonts"] }
+[profile.release]
+opt-level = "z"      # Optimize for size (use "3" for max speed)
+lto = true           # Link Time Optimization (huge for performance/size)
+codegen-units = 1    # Better optimizations at the cost of compile time
+panic = "abort"      # Removes stack unwinding code
+strip = true
