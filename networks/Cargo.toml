@@ -1,0 +1,12 @@
+[package]
+name = "networks"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tun-tap = "0.1.4"
+[profile.release]
+opt-level = "z"     # Optimize aggressively for binary size
+lto = true          # Enable Link-Time Optimization across all crates
+codegen-units = 1   # Reduce parallel code generation units to allow more size optimizations
+panic = "abort"     # Remove panic unwinding strings and stack-trace logic
