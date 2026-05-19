@@ -49,7 +49,7 @@ fn handle_connection(mut stream: TcpStream) {
 
 
 fn main() -> std::io::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:8080")?;
+    let listener = TcpListener::bind("192.168.7.2:8080")?;
     println!("Raw TCP Server listening on 127.0.0.1:8080");
 
     for stream in listener.incoming() {
